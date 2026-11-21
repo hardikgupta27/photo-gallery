@@ -1,0 +1,402 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0b0b0b;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  min-height: 85px;
+  padding: 20px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #38301c;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logo {
+  color: #d4af37;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-decoration: none;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #d4af37;
+}
+
+.home,
+.gallery-page,
+.categories-page,
+.about-page {
+  min-height: 75vh;
+  padding: 65px 7%;
+  text-align: center;
+}
+
+.hero-section {
+  padding: 65px 10px;
+}
+
+.subtitle {
+  color: #d4af37;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+}
+
+.hero-section h1 {
+  font-size: clamp(40px, 7vw, 75px);
+  color: #d4af37;
+  letter-spacing: 5px;
+}
+
+.hero-section h1 span {
+  color: white;
+}
+
+.hero-text {
+  color: #ccc;
+  margin: 25px 0 35px;
+  font-size: 19px;
+}
+
+.explore-btn,
+.contact-form button {
+  display: inline-block;
+  background: #d4af37;
+  color: #111;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.featured {
+  margin: 35px auto;
+  max-width: 700px;
+}
+
+.featured h2,
+.about-page h2 {
+  color: #d4af37;
+  margin-bottom: 20px;
+}
+
+.featured p,
+.about-page > p {
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.gallery-page h1,
+.categories-page h1,
+.about-page h1 {
+  color: #d4af37;
+  margin-bottom: 15px;
+}
+
+.gallery-page > p,
+.categories-page > p {
+  color: #ccc;
+  margin-bottom: 35px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 35px;
+}
+
+.photo-card {
+  background: #181818;
+  border: 1px solid #38301c;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-info {
+  padding: 18px;
+}
+
+.photo-info h2 {
+  color: #d4af37;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.photo-info p {
+  color: #bbb;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 45px;
+}
+
+.category-card {
+  padding: 65px 15px;
+  border: 1px solid #d4af37;
+  border-radius: 8px;
+  color: #d4af37;
+  font-size: 24px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.category-card:hover {
+  background: #d4af37;
+  color: #111;
+}
+
+.about-page > p {
+  max-width: 750px;
+  margin: 25px auto 50px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 25px auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  background: #181818;
+  border: 1px solid #555;
+  color: white;
+  border-radius: 4px;
+  font: inherit;
+}
+
+.contact-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.footer {
+  padding: 25px;
+  text-align: center;
+  border-top: 1px solid #38301c;
+  color: #aaa;
+}
+
+@media (max-width: 800px) {
+  .photo-grid,
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navbar {
+    justify-content: center;
+  }
+
+  .navbar nav {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .photo-grid,
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar nav {
+    gap: 15px;
+  }
+
+  .home,
+  .gallery-page,
+  .categories-page,
+  .about-page {
+    padding: 40px 5%;
+  }
+}
+
+/* Gallery filter buttons */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 30px 0;
+}
+
+.filter-buttons button,
+.photo-info button,
+.modal-navigation button {
+  background: transparent;
+  color: #d4af37;
+  border: 1px solid #d4af37;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-buttons button:hover,
+.filter-buttons .active-filter,
+.photo-info button:hover,
+.modal-navigation button:hover {
+  background: #d4af37;
+  color: #111;
+}
+
+.photo-info button {
+  margin-top: 15px;
+}
+
+.recent-photos {
+  margin-top: 55px;
+  padding: 25px;
+  background: #181818;
+  border-radius: 8px;
+}
+
+.recent-photos h2 {
+  color: #d4af37;
+  margin-bottom: 15px;
+}
+
+/* Photo detail popup */
+.photo-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background: #181818;
+  border: 1px solid #d4af37;
+  border-radius: 8px;
+  padding: 25px;
+  max-width: 550px;
+  width: 100%;
+  text-align: center;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.modal-content h2 {
+  color: #d4af37;
+  margin-bottom: 12px;
+}
+
+.modal-content p {
+  color: #ccc;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: #d4af37;
+  color: #111;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.featured-image {
+  display: block;
+  width: 100%;
+  max-width: 750px;
+  height: 350px;
+  object-fit: cover;
+  margin: 25px auto;
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+}
+
+.featured h3 {
+  color: #d4af37;
+  margin: 15px 0;
+}
+
+.featured .explore-btn {
+  margin-top: 25px;
+}
+
+.category-card h2 {
+  margin-bottom: 15px;
+}
+
+.category-card p {
+  color: #ccc;
+  font-size: 15px;
+  margin-top: 12px;
+}
+
+.contact-form label {
+  color: #d4af37;
+  text-align: left;
+}
+
+.success-message {
+  color: #d4af37 !important;
+  margin-top: 20px;
+}
